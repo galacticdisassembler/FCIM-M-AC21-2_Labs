@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: test-service
+  namespace: test
+spec:
+  selector:
+    app.kubernetes.io/name: test
+  type: LoadBalancer
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 8080
+      # hostPort: 8176
